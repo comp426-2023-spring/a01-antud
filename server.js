@@ -2,7 +2,7 @@
 const http = require('http');
 // Require fs module
 const fs = require('fs');
-const res = require('express/lib/response');
+//const res = require('express/lib/response');
 // Require minimist module (make sure you install this one via npm).
 var argv = require('minimist')(process.argv.slice(2)); //taken from https://www.npmjs.com/package/minimist
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
@@ -29,7 +29,7 @@ fs.readFile(`./public/index.html`, 'utf-8', (err, data) => {
 // 3. end with the data that you are reading in from ./public/index.html.
     const server = http.createServer((req, res) => {
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'text.html');
+        res.setHeader('Content-Type', 'text/html');
         res.end(data);//ends data from fs
     })
     // Start the `server` const listening on the port defined by argument in your `port` const. 
